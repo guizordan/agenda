@@ -5,5 +5,5 @@
 
   class Appointment extends Model
   {
-
+    public $fillable = ['description','date'];
   }
