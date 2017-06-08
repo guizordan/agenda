@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Appointment;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class AppointmentController extends Controller {
@@ -10,46 +11,57 @@ class AppointmentController extends Controller {
     public function index()
     {
      $appointments = Appointment::all();
-
-     return view('appointments.index')
-         ->with('appointments', $appointments);
+     return view('appointment.index')->with('appointments', $appointments);
     }
 
     public function create()
     {
-      return view('appointments.create');
+      return view('appointment.create');
     }
 
     public function store(Request $request)
     {
       $this->validate($request, [
-          'description' => 'required',
-          'date' => 'required',
+        'description' => 'required',
+        'date' => 'required'
       ]);
 
-      Appointment::create($request->all());
-      return redirect()->route('appointments.index')->with('success','Compromisso criado com sucesso');
+      $appointment = new Appointment;
+      $appointment->description = $request->description;
+      $appointment->date    = $request->date;
+      $appointment->save();
+      return redirect()->route('appointment.index')->with('message', 'Compromisso criado com sucesso.');
     }
 
     public function show($id)
     {
-        //
+
     }
 
     public function edit($id)
     {
-      $appointment = Appointment::find($id);
-      return view('appointments.edit',compact('appointment'));
+      $appointment = Appointment::findOrFail($id);
+      return view('appointment.edit',compact('appointment'));
     }
 
-    public function update($id)
+    public function update($id, Request $request)
     {
-        //
+      $this->validate($request, [
+        'description' => 'required',
+        'date' => 'required'
+      ]);
+      
+      $appointment = Appointment::findOrFail($id);
+      $appointment->description = $request->description;
+      $appointment->date = $request->date;
+      $appointment->save();
+      return redirect()->route('appointment.index')->with('message', 'Compromisso atualizado.');
     }
 
     public function destroy($id)
     {
-        //
+      $appointment = Appointment::findOrFail($id);
+      $appointment->delete();
+      return redirect()->route('appointment.index')->with('alert-success','Compromisso deletado');
     }
-
 }

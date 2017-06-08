@@ -11,5 +11,5 @@
 |
 */
 
-Route::resource('appointments', 'AppointmentController');
+Route::resource('appointment', 'AppointmentController');
 Route::get('/', 'AppointmentController@index');
