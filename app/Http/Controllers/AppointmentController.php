@@ -30,7 +30,7 @@ class AppointmentController extends Controller {
       $appointment->description = $request->description;
       $appointment->date    = $request->date;
       $appointment->save();
-      return redirect()->route('appointment.index')->with('message', 'Compromisso criado com sucesso.');
+      return redirect()->route('appointment.index')->with('success', 'Compromisso criado.');
     }
 
     public function show($id)
@@ -50,18 +50,18 @@ class AppointmentController extends Controller {
         'description' => 'required',
         'date' => 'required'
       ]);
-      
+
       $appointment = Appointment::findOrFail($id);
       $appointment->description = $request->description;
       $appointment->date = $request->date;
       $appointment->save();
-      return redirect()->route('appointment.index')->with('message', 'Compromisso atualizado.');
+      return redirect()->route('appointment.index')->with('success', 'Compromisso atualizado.');
     }
 
     public function destroy($id)
     {
       $appointment = Appointment::findOrFail($id);
       $appointment->delete();
-      return redirect()->route('appointment.index')->with('alert-success','Compromisso deletado');
+      return redirect()->route('appointment.index')->with('success','Compromisso apagado');
     }
 }

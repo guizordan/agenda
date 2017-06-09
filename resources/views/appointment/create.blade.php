@@ -5,15 +5,15 @@
     <div class="col-sm-8">
       <h2>Criar compromisso</h2>
     </div>
-    <div class="col-sm-4 text-right">
-      <a class="btn btn-primary" href="{{ route('appointment.index') }}"> Voltar</a>
+    <div class="col-sm-4 text-right pt-10">
+      <a href="{{ route('appointment.index') }}"> Voltar</a>
     </div>
   </div>
 
   @if (count($errors) > 0)
     <div class="alert alert-danger">
-      <strong>Ops!</strong> Ocorreram alguns problemas.<br><br>
-      <ul>
+      <strong>Ops!</strong> Ocorreram alguns problemas:<br>
+      <ul class="list-unstyled">
         @foreach ($errors->all() as $error)
           <li>{{ $error }}</li>
         @endforeach
@@ -33,7 +33,7 @@
         <strong>Data:</strong>
         {!! Form::date('date', null, array('placeholder' => 'Data','class' => 'form-control')) !!}
       </div>
-      <button type="submit" class="btn btn-success btn-block pull-right">Criar</button>
+      <button type="submit" class="btn btn-success btn-block mt-20">Criar</button>
     </div>
   </div>
   {!! Form::close() !!}

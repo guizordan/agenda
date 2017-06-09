@@ -34,7 +34,7 @@
         <strong>Data:</strong>
         {!! Form::date('date', $appointment->date, array('placeholder' => 'Data','class' => 'form-control')) !!}
       </div>
-      <button type="submit" class="btn btn-success btn-block pull-right">Alterar</button>
+      <button type="submit" class="btn btn-success btn-block mt-20">Alterar</button>
     </div>
   </div>
   {!! Form::close() !!}

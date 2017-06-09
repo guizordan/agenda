@@ -7,6 +7,13 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+$fa-font-path: "../../../node_modules/font-awesome/fonts" !default;
+
+@import 'node_modules/font-awesome/scss/font-awesome.scss';
+
+body{
+  padding-top: 70px;
+}
 
 h2 {
   margin-top: 0 !important;
@@ -15,4 +22,23 @@ h2 {
 .ptb{
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.card{
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  border: 2px solid #b9b9b9;
+  margin-bottom: 15px;
+}
+
+.mt-20{
+  margin-top: 20px;
+}
+
+.pt-10{
+  padding-top: 10px;
 }
