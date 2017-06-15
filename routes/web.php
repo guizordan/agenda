@@ -12,4 +12,5 @@
 */
 
 Route::resource('appointment', 'AppointmentController');
+Route::resource('people', 'PeopleController');
 Route::get('/', 'AppointmentController@index');

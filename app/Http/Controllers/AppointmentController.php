@@ -28,7 +28,7 @@ class AppointmentController extends Controller {
 
       $appointment = new Appointment;
       $appointment->description = $request->description;
-      $appointment->date    = $request->date;
+      $appointment->date = $request->date;
       $appointment->save();
       return redirect()->route('appointment.index')->with('success', 'Compromisso criado.');
     }

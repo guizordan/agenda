@@ -3,10 +3,10 @@
 @section('content')
   <div class="row ptb">
     <div class="col-sm-8">
-      <h2>Criar compromisso</h2>
+      <h2>Cadastrar Pessoa</h2>
     </div>
     <div class="col-sm-4 text-right pt-10">
-      <a href="{{ route('appointment.index') }}"> Voltar</a>
+      <a href="{{ route('people.index') }}"> Voltar</a>
     </div>
   </div>
 
@@ -21,18 +21,24 @@
     </div>
   @endif
 
-  {!! Form::open(array('route' => 'appointment.store','method'=>'POST')) !!}
+  {!! Form::open(array('route' => 'people.store','method'=>'POST')) !!}
   <div class="row">
     <div class="col-sm-12">
       <div class="form-group">
-        <strong>Descrição:</strong>
-        {!! Form::text('description', null, array('placeholder' => 'Descrição','class' => 'form-control')) !!}
+        <strong>Nome Completo:</strong>
+        {!! Form::text('fullName', null, array('placeholder' => 'Nome Completo','class' => 'form-control')) !!}
       </div>
 
       <div class="form-group">
-        <strong>Data:</strong>
-        {!! Form::datetime('date', null, array('placeholder' => 'Data','class' => 'form-control')) !!}
+        <strong>E-mail:</strong>
+        {!! Form::text('email', null, array('placeholder' => 'E-mail','class' => 'form-control')) !!}
       </div>
+
+      <div class="form-group">
+        <strong>Telefone:</strong>
+        {!! Form::text('phone', null, array('placeholder' => 'Telefone','class' => 'form-control')) !!}
+      </div>
+
       <button type="submit" class="btn btn-success btn-block mt-20">Criar</button>
     </div>
   </div>

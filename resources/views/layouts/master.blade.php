@@ -26,8 +26,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="@if (Route::currentRouteName() === 'appointment.index') active @endif"><a href="#">Agenda</a></li>
-            <li class="@if (Route::currentRouteName() === 'people.index') active @endif"><a href="#about">Pessoas</a></li>
+            <li class="@if (Route::currentRouteName() === 'appointment.index') active @endif"><a href="{{ route('appointment.index') }}">Agenda</a></li>
+            <li class="@if (Route::currentRouteName() === 'people.index') active @endif"><a href="{{ route('people.index') }}">Pessoas</a></li>
             <li><a href="#about">Locais</a></li>
           </ul>
         </div>
@@ -41,5 +41,6 @@
           </div>
         </div>
       </div>
+      
     </body>
 </html>

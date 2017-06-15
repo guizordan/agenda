@@ -6,4 +6,8 @@
   class Appointment extends Model
   {
     public $fillable = ['description','date'];
+
+    public function people() {
+	    return $this->belongsToMany('People');
+    }
   }
