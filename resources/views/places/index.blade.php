@@ -3,11 +3,11 @@
 @section('content')
 <div class="row ptb">
   <div class="col-sm-8">
-    <h2>Pessoas</h2>
+    <h2>Lugares</h2>
   </div>
   <div class="col-sm-4 text-right">
-    <a class="btn btn-success" href="{{ route('people.create') }}">
-      <i class="fa fa-plus"></i> Pessoa
+    <a class="btn btn-success" href="{{ route('places.create') }}">
+      <i class="fa fa-plus"></i> Lugar
     </a>
   </div>
 </div>
@@ -21,29 +21,29 @@
 <table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
-      <th>Nome Completo</th>
-      <th>Telefone</th>
-      <th>E-mail</th>
+      <th>Rua</th>
+      <th>Bairro</th>
+      <th>Número</th>
       <th>Ação</th>
     </tr>
   </thead>
 
   <tbody>
-    @foreach($people as $person)
+    @foreach($places as $place)
       <tr>
-        <td>{{ $person->fullName }}</td>
-        <td>{{ $person->phone }}</td>
-        <td>{{ $person->email }}</td>
+        <td>{{ $place->street }}</td>
+        <td>{{ $place->neighborhood }}</td>
+        <td>{{ $place->number }}</td>
 
         <td>
           <ul class="list-inline">
             <li>
-              <a href="{{ route('people.edit', ['id'=>$person->id]) }}" class="btn btn-sm btn-primary">
+              <a href="{{ route('places.edit', ['id'=>$place->id]) }}" class="btn btn-sm btn-primary">
                 <i class="fa fa-edit"></i>
               </a>
             </li>
             <li>
-              {!! Form::open(['method' => 'DELETE','route' => ['people.destroy', $person->id]]) !!}
+              {!! Form::open(['method' => 'DELETE','route' => ['places.destroy', $place->id]]) !!}
               <button class="btn btn-sm btn-danger" type="submit">
                 <i class="fa fa-trash"></i>
               </button>

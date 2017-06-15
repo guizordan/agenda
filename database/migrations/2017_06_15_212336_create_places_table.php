@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAppointmentsTable extends Migration
+class CreatePlacesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateAppointmentsTable extends Migration
      */
     public function up()
     {
-      Schema::create('appointments', function (Blueprint $table) {
+      Schema::create('places', function (Blueprint $table) {
         $table->increments('id');
-        $table->string('description');
-        $table->string('time');
-        $table->dateTime('date');
+        $table->string('street');
+        $table->string('number');
+        $table->string('neighborhood');
         $table->timestamps();
       });
     }
@@ -29,6 +29,6 @@ class CreateAppointmentsTable extends Migration
      */
     public function down()
     {
-      Schema::drop('appointments');
+      Schema::drop('places');
     }
 }

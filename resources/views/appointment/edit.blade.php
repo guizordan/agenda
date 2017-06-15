@@ -32,10 +32,13 @@
 
       <div class="form-group">
         <strong>Data:</strong>
-        {!! Form::date('date', $appointment->date, array('placeholder' => 'Data','class' => 'form-control')) !!}
+        {!! Form::date('date', $appointment->date, array('placeholder' => 'Data','class' => 'form-control', 'id' => 'time')) !!}
       </div>
       <button type="submit" class="btn btn-success btn-block mt-20">Alterar</button>
     </div>
   </div>
+  <script>
+    $('#time').mask('00:00');
+  </script>
   {!! Form::close() !!}
 @endsection

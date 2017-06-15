@@ -33,11 +33,6 @@ class AppointmentController extends Controller {
       return redirect()->route('appointment.index')->with('success', 'Compromisso criado.');
     }
 
-    public function show($id)
-    {
-
-    }
-
     public function edit($id)
     {
       $appointment = Appointment::findOrFail($id);

@@ -31,10 +31,18 @@
 
       <div class="form-group">
         <strong>Data:</strong>
-        {!! Form::datetime('date', null, array('placeholder' => 'Data','class' => 'form-control')) !!}
+        {!! Form::date('date', null, array('placeholder' => 'Data','class' => 'form-control')) !!}
+      </div>
+
+      <div class="form-group">
+        <strong>Hora:</strong>
+        {!! Form::text('time', null, array('placeholder' => 'Hora','class' => 'form-control', 'id' => 'time')) !!}
       </div>
       <button type="submit" class="btn btn-success btn-block mt-20">Criar</button>
     </div>
   </div>
+  <script>
+    $('#time').mask('00:00');
+  </script>
   {!! Form::close() !!}
 @endsection

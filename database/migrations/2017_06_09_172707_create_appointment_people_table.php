@@ -15,15 +15,15 @@ class CreateAppointmentPeopleTable extends Migration
     {
       Schema::create('appointment_people', function(Blueprint $table)
       {
-          $table->integer('appointment_id')->unsigned()->nullable();
-          $table->foreign('appointment_id')->references('id')
-                ->on('appointments')->onDelete('cascade');
+        $table->integer('appointment_id')->unsigned()->nullable();
+        $table->foreign('appointment_id')->references('id')
+              ->on('appointments')->onDelete('cascade');
 
-          $table->integer('person_id')->unsigned()->nullable();
-          $table->foreign('person_id')->references('id')
-                ->on('people')->onDelete('cascade');
+        $table->integer('person_id')->unsigned()->nullable();
+        $table->foreign('person_id')->references('id')
+              ->on('people')->onDelete('cascade');
 
-          $table->timestamps();
+        $table->timestamps();
       });
     }
 

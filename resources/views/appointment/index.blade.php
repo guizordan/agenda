@@ -26,7 +26,7 @@
             <strong>Descrição</strong> <br>
             {{ $appointment->description }} <br>
             <strong>Data</strong> <br>
-            {{ $appointment->date }}
+            {{  Carbon\Carbon::parse($appointment->date)->format('d/m/Y')  }} às {{$appointment->time}}
           </div>
           <div class="col-sm-3">
             <strong>Pessoas</strong> <br>

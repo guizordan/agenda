@@ -34,15 +34,10 @@ class PeopleController extends Controller {
       return redirect()->route('people.index')->with('success', 'Pessoa Cadastrada.');
     }
 
-    public function show($id)
-    {
-
-    }
-
     public function edit($id)
     {
-      $people = People::findOrFail($id);
-      return view('people.edit', compact('people'));
+      $person = People::findOrFail($id);
+      return view('people.edit', compact('person'));
     }
 
     public function update($id, Request $request)
@@ -57,7 +52,7 @@ class PeopleController extends Controller {
       $people->email = $request->email;
       $people->phone = $request->phone;
       $people->save();
-      return redirect()->route('people.index')->with('success', 'Compromisso atualizado.');
+      return redirect()->route('people.index')->with('success', 'Pessoa atualizada.');
     }
 
     public function destroy($id)
