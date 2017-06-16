@@ -30,9 +30,14 @@
           </div>
           <div class="col-sm-3">
             <strong>Pessoas</strong> <br>
+            @foreach ($appointment->people as $key => $person)
+              {{ $person->fullName }} <br>
+            @endforeach
           </div>
           <div class="col-sm-4">
             <strong>Local</strong> <br>
+            Bairro {{ $appointment->place->neighborhood }} <br>
+            {{ $appointment->place->street }}, {{ $appointment->place->number }}<br>
           </div>
           <div class="col-sm-2 text-right">
             <ul class="list-inline">

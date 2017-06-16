@@ -18,6 +18,8 @@ class CreateAppointmentsTable extends Migration
         $table->string('description');
         $table->string('time');
         $table->dateTime('date');
+        $table->integer('place_id')->unsigned();
+        $table->foreign('place_id')->references('id')->on('places');
         $table->timestamps();
       });
     }

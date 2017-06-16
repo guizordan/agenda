@@ -32,7 +32,7 @@ class PlacesController extends Controller {
       $place->street = $request->street;
       $place->number = $request->number;
       $place->save();
-      return redirect()->route('places.index')->with('success', 'Lugar Cadastrado.');
+      return redirect()->route('places.index')->with('success', 'Local Cadastrado.');
     }
 
     public function edit($id)
@@ -54,13 +54,13 @@ class PlacesController extends Controller {
       $place->street = $request->street;
       $place->number = $request->number;
       $place->save();
-      return redirect()->route('places.index')->with('success', 'Lugar atualizado.');
+      return redirect()->route('places.index')->with('success', 'Local atualizado.');
     }
 
     public function destroy($id)
     {
       $place = Place::findOrFail($id);
       $place->delete();
-      return redirect()->route('places.index')->with('success','Lugar removido.');
+      return redirect()->route('places.index')->with('success','Local removido.');
     }
 }

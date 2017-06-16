@@ -3,11 +3,11 @@
 @section('content')
 <div class="row ptb">
   <div class="col-sm-8">
-    <h2>Lugares</h2>
+    <h2>Locais</h2>
   </div>
   <div class="col-sm-4 text-right">
     <a class="btn btn-success" href="{{ route('places.create') }}">
-      <i class="fa fa-plus"></i> Lugar
+      <i class="fa fa-plus"></i> Local
     </a>
   </div>
 </div>

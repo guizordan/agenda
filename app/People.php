@@ -8,6 +8,6 @@
     public $fillable = ['fullName','phone', 'email'];
 
     public function appointments() {
-	    return $this->belongsToMany('Appointment');
+	    return $this->belongsToMany('App\Appointment', "appointment_people");
     }
   }

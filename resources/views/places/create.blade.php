@@ -3,7 +3,7 @@
 @section('content')
   <div class="row ptb">
     <div class="col-sm-8">
-      <h2>Cadastrar Lugar</h2>
+      <h2>Cadastrar Local</h2>
     </div>
     <div class="col-sm-4 text-right pt-10">
       <a href="{{ route('places.index') }}"> Voltar</a>
