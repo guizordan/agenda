@@ -58,12 +58,20 @@ class AppointmentController extends Controller {
     {
       $this->validate($request, [
         'description' => 'required',
-        'date' => 'required'
+        'date' => 'required',
+        'time' => 'required',
+        'place_id' => 'required'
       ]);
 
       $appointment = Appointment::findOrFail($id);
+
       $appointment->description = $request->description;
       $appointment->date = $request->date;
+      $appointment->time = $request->time;
+      $appointment->place_id = $request->place_id;
+      $appointment->save();
+
+      $appointment->people()->sync($request->people);
       $appointment->save();
       return redirect()->route('appointment.index')->with('success', 'Compromisso atualizado.');
     }

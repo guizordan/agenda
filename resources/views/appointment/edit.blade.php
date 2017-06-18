@@ -31,7 +31,7 @@
 
       <div class="form-group">
         <strong>Data:</strong>
-        {!! Form::date('date', $appointment->date, array('placeholder' => 'Data','class' => 'form-control', 'id' => 'time')) !!}
+        {!! Form::date('date', $appointment->date, array('placeholder' => 'Data','class' => 'form-control')) !!}
       </div>
 
       <div class="form-group">
