@@ -31,6 +31,7 @@
             <li class="@if (Route::currentRouteName() === 'appointment.index') active @endif"><a href="{{ route('appointment.index') }}">Agenda</a></li>
             <li class="@if (Route::currentRouteName() === 'people.index') active @endif"><a href="{{ route('people.index') }}">Pessoas</a></li>
             <li class="@if (Route::currentRouteName() === 'places.index') active @endif"><a href="{{ route('places.index') }}">Locais</a></li>
+            <li class="@if (Route::currentRouteName() === 'goals.index') active @endif"><a href="{{ route('goals.index') }}">Metas</a></li>
           </ul>
         </div>
       </div>
